@@ -8,7 +8,7 @@
 các gói được tải xuống được lưu vào một thư mục cụ thể để dễ tìm kiếm, có thể thay
 đổi vị trí lưu cache của Conda bằng cách sau:
 - `export CONDA_PKGS_DIRS=/home/username-1/my_local_channel`
-- kiểm tra biến đã được đặt chưa bằng lệnh
+- Kiểm tra biến đã được đặt chưa bằng lệnh
 - `echo $CONDA_PKGS_DIRS`
 - Chạy lệnh tải gói với tùy chọn --download-only:
 - `conda create --name temp_env python=3.11.11 --download-only`
