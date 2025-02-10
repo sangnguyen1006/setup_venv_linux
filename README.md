@@ -12,7 +12,7 @@ các gói được tải xuống được lưu vào một thư mục cụ thể 
 - `echo $CONDA_PKGS_DIRS`
 - Chạy lệnh tải gói với tùy chọn --download-only:
 - `conda create --name temp_env python=3.11.11 --download-only`
-### 1.2. Trên thiết bị không có kết nối 
+### 1.2. Trên thiết bị không có kết nối internet
 - Sao chép thư mục `my_local_channel` đã tạo ở bước trên vào máy đích ví dụ `/home/username-2/my_local_channel`
 - Tạo môi trường offline sử dụng local channel
 - `conda create --offline --name my_offline_env python=3.11.11 -c file:///home/username-2/my_local_channel`
@@ -23,10 +23,17 @@ các gói được tải xuống được lưu vào một thư mục cụ thể 
 ### 2.1. Trên thiết bị có kết nối internet
 - Cài đặt thư viện (ví dụ `medaka`)
 - `pip install medaka`
+- Sử dụng thư viện `medaka` cần cài đặt thêm `pyabpoa`
+- `pip install pyabpoa`
 - Tạo tệp `requirements.txt`
 - `pip freeze >> requirements.txt`
 - Tải thư viện và các gói phụ thuộc vào `wheelhouse`
 - `mkdir wheelhouse && pip download -r requirements.txt -d wheelhouse`
-- Sao chép tệp `requirements.txt` vào thư mục `wheelhouse` 
-
+- Sao chép tệp `requirements.txt` vào thư mục `wheelhouse`
+### 2.2. Trên thiết bị không có kết nối internet
+- Sao chép thư mục `wheelhouse` đã tạo ở bước trên vào máy đích ví dụ `/home/username-2/wheelhouse`
+- Đi đến thư mục `/home/username-2` chạy lệnh cài đặt các thư viện python
+- `pip install -r wheelhouse/requirements.txt --no-index --find-links wheelhouse`
+- Kiểm tra cài đặt
+- `medaka --version`
 
