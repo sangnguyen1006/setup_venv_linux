@@ -1,5 +1,5 @@
 # Setup_venv_linux
-## 1. Tạo môi trường python trong miniconda3
+## 1. Tạo môi trường Python trong miniconda3
 ### 1.1. Trên thiết bị có kết nối internet
 - Tạo thư mục muốn dùng làm local channel
 - `mkdir -p /home/username-1/my_local_channel`
@@ -19,7 +19,7 @@ các gói được tải xuống được lưu vào một thư mục cụ thể 
 - Sau khi lệnh trên chạy xong, có thể kích hoạt môi trường và kiểm tra phiên bản Python
 - `conda activate my_offline_env`
 - `python --version`
-## 2. Cài đặt thư viện python thông qua pip
+## 2. Cài đặt thư viện Python thông qua pip
 ### 2.1. Trên thiết bị có kết nối internet
 - Cài đặt thư viện (ví dụ `medaka`)
 - `pip install medaka`
@@ -32,7 +32,7 @@ các gói được tải xuống được lưu vào một thư mục cụ thể 
 - Sao chép tệp `requirements.txt` vào thư mục `wheelhouse`
 ### 2.2. Trên thiết bị không có kết nối internet
 - Sao chép thư mục `wheelhouse` đã tạo ở bước trên vào máy đích ví dụ `/home/username-2/wheelhouse`
-- Đi đến thư mục `/home/username-2` chạy lệnh cài đặt các thư viện python
+- Đi đến thư mục `/home/username-2` chạy lệnh cài đặt các thư viện Python
 - `pip install -r wheelhouse/requirements.txt --no-index --find-links wheelhouse`
 - Kiểm tra cài đặt
 - `medaka --version`
