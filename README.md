@@ -12,3 +12,12 @@ các gói được tải xuống được lưu vào một thư mục cụ thể 
 - echo $CONDA_PKGS_DIRS
 - Chạy lệnh tải gói với tùy chọn --download-only:
 - conda create --name temp_env python=3.11.11 --download-only
+### 1.2. Trên thiết bị không có kết nối 
+- Sao chép thư mục my_local_channel đã tạo ở bước trên vào máy đích ví dụ /home/username-2/my_local_channel
+- Tạo môi trường offline sử dụng local channel
+- conda create --offline --name my_offline_env python=3.11.11 -c file:///home/username-2/my_local_channel
+- Sau khi lệnh trên chạy xong, bạn có thể kích hoạt môi trường và kiểm tra phiên bản Python
+- conda activate my_offline_env
+- python --version
+
+
