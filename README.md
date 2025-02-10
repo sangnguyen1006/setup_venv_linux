@@ -23,10 +23,10 @@ các gói được tải xuống được lưu vào một thư mục cụ thể 
 ### 2.1. Trên thiết bị có kết nối internet
 - Cài đặt thư viện (ví dụ `medaka`)
 - `pip install medaka`
-- Tạo file `requirements.txt`
+- Tạo tệp `requirements.txt`
 - `pip freeze >> requirements.txt`
 - Tải thư viện và các gói phụ thuộc vào `wheelhouse`
 - `mkdir wheelhouse && pip download -r requirements.txt -d wheelhouse`
-- Copy `requirements.txt` into `wheelhouse` directory
+- Sao chép tệp `requirements.txt` vào thư mục `wheelhouse` 
 
 
