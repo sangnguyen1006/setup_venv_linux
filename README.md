@@ -19,5 +19,10 @@ các gói được tải xuống được lưu vào một thư mục cụ thể 
 - Sau khi lệnh trên chạy xong, bạn có thể kích hoạt môi trường và kiểm tra phiên bản Python
 - `conda activate my_offline_env`
 - `python --version`
+## 2. Cài đặt thư viện python thông qua pip
+### 2.1. Trên thiết bị có kết nối internet
+- Cài đặt thư viện (ví dụ `medaka` phiên bản pytorch+CPU)
+- `pip install medaka-cpu --extra-index-url https://download.pytorch.org/whl/cpu`
+- 
 
 
