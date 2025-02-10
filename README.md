@@ -16,7 +16,7 @@ các gói được tải xuống được lưu vào một thư mục cụ thể 
 - Sao chép thư mục `my_local_channel` đã tạo ở bước trên vào máy đích ví dụ `/home/username-2/my_local_channel`
 - Tạo môi trường offline sử dụng local channel
 - `conda create --offline --name my_offline_env python=3.11.11 -c file:///home/username-2/my_local_channel`
-- Sau khi lệnh trên chạy xong, bạn có thể kích hoạt môi trường và kiểm tra phiên bản Python
+- Sau khi lệnh trên chạy xong, có thể kích hoạt môi trường và kiểm tra phiên bản Python
 - `conda activate my_offline_env`
 - `python --version`
 ## 2. Cài đặt thư viện python thông qua pip
@@ -25,6 +25,8 @@ các gói được tải xuống được lưu vào một thư mục cụ thể 
 - `pip install medaka`
 - Tạo file `requirements.txt`
 - `pip freeze >> requirements.txt`
-- 
+- Tải thư viện và các gói phụ thuộc vào `wheelhouse`
+- `mkdir wheelhouse && pip download -r requirements.txt -d wheelhouse`
+- Copy `requirements.txt` into `wheelhouse` directory
 
 
