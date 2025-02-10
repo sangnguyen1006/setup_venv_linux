@@ -21,8 +21,10 @@ các gói được tải xuống được lưu vào một thư mục cụ thể 
 - `python --version`
 ## 2. Cài đặt thư viện python thông qua pip
 ### 2.1. Trên thiết bị có kết nối internet
-- Cài đặt thư viện (ví dụ `medaka` phiên bản pytorch+CPU)
-- `pip install medaka-cpu --extra-index-url https://download.pytorch.org/whl/cpu`
+- Cài đặt thư viện (ví dụ `medaka`)
+- `pip install medaka`
+- Tạo file `requirements.txt`
+- `pip freeze >> requirements.txt`
 - 
 
 
