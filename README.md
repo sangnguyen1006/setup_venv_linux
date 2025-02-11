@@ -63,7 +63,17 @@ python -m pip -V
 ```
 ## 2. Cài đặt thư viện Python thông qua pip
 ### 2.1. Trên thiết bị có kết nối Internet
-- Cài đặt thư viện (ví dụ `medaka`)
+- Tạo một `venv` mới để cài đặt các gói *Python* (ví dụ `medaka`)
+```linux
+conda create --name medaka_env python=3.11.11
+```
+```linux
+conda activate medaka_env
+```
+```linux
+python -m pip install --upgrade pip
+```
+- Cài đặt thư viện `medaka`
 ```linux
 pip install medaka
 ```
