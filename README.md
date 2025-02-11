@@ -154,7 +154,7 @@ conda install medaka --download-only
 ```
 - Tải các gói của `pyabpoa` vào *Local channel*
 ```linux
-pip install pyabpoa --download-only
+conda install pyabpoa --download-only
 ```
 - Tạo *index* cho *local channel*, Lệnh bên dưới sẽ tạo tệp `/home/username-1/my_local_channel/noarch/repodata.json`,
 giúp *Conda* nhận diện đó là một *channel* hợp lệ.
