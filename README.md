@@ -12,6 +12,9 @@ các gói được tải xuống được lưu vào một thư mục cụ thể 
 - `echo $CONDA_PKGS_DIRS`
 - Chạy lệnh tải gói với tùy chọn --download-only:
 - `conda create --name temp_env python=3.11.11 --download-only`
+- Tạo các tệp index (như repodata.json) trong thư mục, giúp Conda nhận diện đó là
+- một kênh cục bộ (local channel), nếu chưa có lệnh conda index hãy chạy `conda install conda-build`
+- `conda index /home/username-1/my_local_channel`
 - Đặt lại thư mục cache mặc định của Conda
 - `export CONDA_PKGS_DIRS=/home/username-1/miniconda3/pkgs`
 ### 1.2. Trên thiết bị không có kết nối internet
