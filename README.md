@@ -156,9 +156,14 @@ conda install medaka --download-only
 ```linux
 pip install pyabpoa --download-only
 ```
-- Tạo index cho local channel, Lệnh bên dưới sẽ tạo tệp `repodata.json` trong thư mục `my_local_channel`,
+- Tạo *index* cho *local channel*, Lệnh bên dưới sẽ tạo tệp `/home/username-1/my_local_channel/noarch/repodata.json`,
 giúp *Conda* nhận diện đó là một *channel* hợp lệ.
 ```linux
 conda index /home/username-1/my_local_channel
 ```
+- Nén thư mục `my_local_channel` thành tệp `my_local_channel.tar.gz` bằng lệnh
+```linux
+tar -zcf /home/username-1/my_local_channel.tar.gz /home/username-1/my_local_channel
+```
+
 
