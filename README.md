@@ -90,8 +90,23 @@ pip freeze >> requirements.txt
 mkdir wheelhouse && pip download -r requirements.txt -d wheelhouse
 ```
 - Sao chép tệp `requirements.txt` vào thư mục `wheelhouse`
+```linux
+cp requirements.txt wheelhouse
+```
+- Nén thư mục `wheelhouse` thành tệp `wheelhouse.tar.gz` bằng lệnh
+```linux
+tar -zcf wheelhouse.tar.gz wheelhouse
+```
 ### 2.2. Trên thiết bị không có kết nối Internet
-- Sao chép thư mục `wheelhouse` đã tạo ở bước trên vào máy đích ví dụ `/home/username-2/wheelhouse`
+- Sao chép thư mục `wheelhouse.tar.gz` đã tạo ở bước trên vào máy đích ví dụ `/home/username-2/wheelhouse.tar.gz`
+- Giải nén tệp  `wheelhouse.tar.gz` thành thư mục `wheelhouse` bằng lệnh
+```linux
+tar -zxf /home/username-2/wheelhouse.tar.gz
+```
+- Kích hoặt môi trường `my_offline_env` trong *Conda*
+```linux
+conda activate my_offline_env
+```
 - Đi đến thư mục `/home/username-2` chạy lệnh cài đặt các thư viện *Python*
 ```linux
 pip install -r wheelhouse/requirements.txt --no-index --find-links wheelhouse
