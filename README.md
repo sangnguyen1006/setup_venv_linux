@@ -29,6 +29,7 @@ một kênh cục bộ (local channel), nếu chưa có lệnh `conda index` hã
 import sys
 print(sys.executable)
 ```
+- Cuối cùng 
 ## 2. Cài đặt thư viện Python thông qua pip
 ### 2.1. Trên thiết bị có kết nối internet
 - Cài đặt thư viện (ví dụ `medaka`)
