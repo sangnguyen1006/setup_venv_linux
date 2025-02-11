@@ -5,7 +5,7 @@
 ```linux
 mkdir -p /home/username-1/my_local_channel
 ```
-- Conda sẽ tải các gói cần thiết và lưu chúng vào thư mục cache mặc định của Conda
+- *Conda* sẽ tải các gói cần thiết và lưu chúng vào thư mục *cache* mặc định của *Conda*
 (thường là thư mục *pkgs* nằm trong đường dẫn cài đặt của *Conda*). Tuy nhiên, nếu muốn
 các gói được tải xuống được lưu vào một thư mục cụ thể để dễ tìm kiếm, có thể thay
 đổi vị trí lưu *cache* của *Conda* bằng cách sau:
@@ -56,18 +56,30 @@ python -m pip -V
 ## 2. Cài đặt thư viện Python thông qua pip
 ### 2.1. Trên thiết bị có kết nối internet
 - Cài đặt thư viện (ví dụ `medaka`)
-- `pip install medaka`
+```linux
+pip install medaka
+```
 - Sử dụng thư viện `medaka` cần cài đặt thêm `pyabpoa`
-- `pip install pyabpoa`
+```linux
+pip install pyabpoa
+```
 - Tạo tệp `requirements.txt`
-- `pip freeze >> requirements.txt`
+```linux
+pip freeze >> requirements.txt
+```
 - Tải thư viện và các gói phụ thuộc vào `wheelhouse`
-- `mkdir wheelhouse && pip download -r requirements.txt -d wheelhouse`
+```linux
+mkdir wheelhouse && pip download -r requirements.txt -d wheelhouse
+```
 - Sao chép tệp `requirements.txt` vào thư mục `wheelhouse`
 ### 2.2. Trên thiết bị không có kết nối internet
 - Sao chép thư mục `wheelhouse` đã tạo ở bước trên vào máy đích ví dụ `/home/username-2/wheelhouse`
-- Đi đến thư mục `/home/username-2` chạy lệnh cài đặt các thư viện Python
-- `pip install -r wheelhouse/requirements.txt --no-index --find-links wheelhouse`
+- Đi đến thư mục `/home/username-2` chạy lệnh cài đặt các thư viện *Python*
+```linux
+pip install -r wheelhouse/requirements.txt --no-index --find-links wheelhouse
+```
 - Kiểm tra cài đặt
-- `medaka --version`
+```linux
+medaka --version
+```
 
