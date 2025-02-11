@@ -24,6 +24,11 @@ một kênh cục bộ (local channel), nếu chưa có lệnh `conda index` hã
 - Sau khi lệnh trên chạy xong, có thể kích hoạt môi trường và kiểm tra phiên bản Python
 - `conda activate my_offline_env`
 - `python --version`
+- Sau đó kiểm tra đường dẫn Python, kết quả phải là `/home/username-1/miniconda3/envs/my_offline_env/bin/python`
+```python
+import sys
+print(sys.executable)
+```
 ## 2. Cài đặt thư viện Python thông qua pip
 ### 2.1. Trên thiết bị có kết nối internet
 - Cài đặt thư viện (ví dụ `medaka`)
