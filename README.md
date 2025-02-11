@@ -56,12 +56,12 @@ import sys
 print(sys.executable)
 ```
 - Cuối cùng kiểm tra đường dẫn *pip*, kết quả phải là `/home/username-1/miniconda3/envs/my_offline_env/lib/python3.11/site-packages/pip`,
-nếu không phải, cần vô hiệu hóa *user site packages*, để tránh việc pip truy cập vào các gói được cài đặt ở cấp *user*,
+nếu không phải, cần vô hiệu hóa *user site packages*, để tránh việc *pip* truy cập vào các gói được cài đặt ở cấp *user*,
 có thể tạm thời đặt biến môi trường thành `export PYTHONNOUSERSITE=1`
 ```linux
 python -m pip -V
 ```
-## 2. Cài đặt thư viện Python thông qua pip
+## 2. Cài đặt thư viện Python thông qua Pip
 ### 2.1. Trên thiết bị có kết nối Internet
 - Tạo một `venv` mới để cài đặt các gói *Python* (ví dụ `medaka`)
 ```linux
@@ -117,4 +117,3 @@ medaka --version
 ```
 
 # LINUX - Create a Local channel && Install packages via Conda
-
