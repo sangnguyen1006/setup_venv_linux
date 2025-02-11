@@ -1,4 +1,4 @@
-# LINUX - Install libs && venvs
+# LINUX - Install libs && venvs via PIP
 ## 1. Tạo môi trường Python trong miniconda3
 ### 1.1. Trên thiết bị có kết nối Internet
 - Tạo thư mục muốn dùng làm *Local channel*
@@ -103,7 +103,7 @@ tar -zcf wheelhouse.tar.gz wheelhouse
 ```linux
 tar -zxf /home/username-2/wheelhouse.tar.gz
 ```
-- Kích hoặt môi trường `my_offline_env` trong *Conda*
+- Kích hoặt môi trường `my_offline_env` trong *Conda* đã tạo ở bước **1.2**
 ```linux
 conda activate my_offline_env
 ```
@@ -115,4 +115,6 @@ pip install -r wheelhouse/requirements.txt --no-index --find-links wheelhouse
 ```linux
 medaka --version
 ```
+
+# LINUX - Create a Local channel && Install packages via Conda
 
