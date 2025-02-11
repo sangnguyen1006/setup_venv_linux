@@ -16,7 +16,7 @@ export CONDA_PKGS_DIRS=/home/username-1/my_local_channel
 ```linux
 echo $CONDA_PKGS_DIRS
 ```
-- Chạy lệnh tải gói với tùy chọn `--download-only`:
+- Lệnh tải gói với tùy chọn `--download-only`:
 ```linux
 conda create --name temp_env python=3.11.11 --download-only
 ```
@@ -117,3 +117,44 @@ medaka --version
 ```
 
 # LINUX - Create a Local channel && Install packages via Conda
+## 1. Trên thiết bị có kết nối Internet
+- Tạo một `venv` mới để cài đặt các gói *Python* (ví dụ `medaka`)
+```linux
+conda create --name medaka_env python=3.11.11
+```
+```linux
+conda activate medaka_env
+```
+```linux
+python -m pip install --upgrade pip
+```
+- Tạo thư mục muốn dùng làm *Local channel*
+```linux
+mkdir -p /home/username-1/my_local_channel
+```
+- Tùy chỉnh cấu hình trong tệp `.condarc`, Nếu không thấy tệp `~/.condarc` hoặc `/etc/conda/.condarc` hãy
+tự tạo tệp `vi /home/username-1/.condarc`. Trong tệp `.condarc`, thứ tự các kênh rất quan trọng. Trong ví dụ bên dưới,
+*Conda* sẽ tìm kiếm các gói trong kênh `conda-forge` trước, sau đó là `bioconda`, và cuối cùng là `defaults`.
+- Đặt lại `pkgs_dirs` mỗi lần sử dụng *Conda* sẽ ưu tiên lưu các gói vào thư mục `/home/username-1/my_local_channel`.
+```linux
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+pkgs_dirs:
+  - /home/username-1/my_local_channel
+```
+- Tải các gói của `python3.11.11` vào *Local channel* 
+```linux
+conda create --name temp_env python=3.11.11 --download-only
+```
+- Tải các gói của `medaka` vào *Local channel*
+```linux
+conda install medaka --download-only
+```
+- Tải các gói của `pyabpoa` vào *Local channel*
+```linux
+pip install pyabpoa --download-only
+```
+
+
