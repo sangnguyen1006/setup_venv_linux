@@ -1,6 +1,6 @@
-# Setup_venv_linux
+# LINUX - Install libs && venvs
 ## 1. Tạo môi trường Python trong miniconda3
-### 1.1. Trên thiết bị có kết nối *internet*
+### 1.1. Trên thiết bị có kết nối Internet
 - Tạo thư mục muốn dùng làm *Local channel*
 ```linux
 mkdir -p /home/username-1/my_local_channel
@@ -25,12 +25,20 @@ một kênh cục bộ *(Local channel)*, nếu chưa có lệnh `conda index` h
 ```linux
 conda index /home/username-1/my_local_channel
 ```
+- Nén thư mục `my_local_channel` thành tệp `my_local_channel.tar.gz` bằng lệnh
+```linux
+tar -zcf /home/username-1/my_local_channel.tar.gz /home/username-1/my_local_channel
+```
 - Đặt lại thư mục *cache* mặc định của *Conda*
 ```linux
 export CONDA_PKGS_DIRS=/home/username-1/miniconda3/pkgs
 ```
-### 1.2. Trên thiết bị không có kết nối *internet*
-- Sao chép thư mục `my_local_channel` đã tạo ở bước trên vào máy đích ví dụ `/home/username-2/my_local_channel`
+### 1.2. Trên thiết bị không có kết nối Internet
+- Sao chép tệp `my_local_channel.tar.gz` đã tạo ở bước trên vào máy đích ví dụ `/home/username-2/my_local_channel.tar.gz`
+- Giải nén tệp  `my_local_channel.tar.gz` thành thư mục `my_local_channel` bằng lệnh
+```linux
+tar -zxf /home/username-2/my_local_channel.tar.gz
+```
 - Tạo môi trường *offline* sử dụng *Local channel*
 ```linux
 conda create --offline --name my_offline_env python=3.11.11 -c file:///home/username-2/my_local_channel
@@ -54,7 +62,7 @@ có thể tạm thời đặt biến môi trường thành `export PYTHONNOUSERS
 python -m pip -V
 ```
 ## 2. Cài đặt thư viện Python thông qua pip
-### 2.1. Trên thiết bị có kết nối internet
+### 2.1. Trên thiết bị có kết nối Internet
 - Cài đặt thư viện (ví dụ `medaka`)
 ```linux
 pip install medaka
@@ -72,7 +80,7 @@ pip freeze >> requirements.txt
 mkdir wheelhouse && pip download -r requirements.txt -d wheelhouse
 ```
 - Sao chép tệp `requirements.txt` vào thư mục `wheelhouse`
-### 2.2. Trên thiết bị không có kết nối internet
+### 2.2. Trên thiết bị không có kết nối Internet
 - Sao chép thư mục `wheelhouse` đã tạo ở bước trên vào máy đích ví dụ `/home/username-2/wheelhouse`
 - Đi đến thư mục `/home/username-2` chạy lệnh cài đặt các thư viện *Python*
 ```linux
