@@ -120,7 +120,7 @@ medaka --version
 ## 1. Trên thiết bị có kết nối Internet
 - Tạo thư mục muốn dùng làm *Local channel*
 ```linux
-mkdir -p /home/username-1/my_local_channel
+mkdir -p /home/username-1/my_local_channel/linux-64
 ```
 - Tùy chỉnh cấu hình trong tệp `.condarc`, Nếu không thấy tệp `~/.condarc` hoặc `/etc/conda/.condarc` hãy
 tự tạo tệp `vi /home/username-1/.condarc`. Trong tệp `.condarc`, thứ tự các kênh rất quan trọng. Trong ví dụ bên dưới,
@@ -132,25 +132,22 @@ channels:
   - bioconda
   - defaults
 pkgs_dirs:
-  - /home/username-1/my_local_channel
+  - /home/username-1/my_local_channel/linux-64
 ```
 - Tạo một `venv` mới để cài đặt các gói *Python* (ví dụ `medaka`)
 ```linux
-conda create --name medaka_env python=3.11.11
+conda create --name python310_env python=3.10
 ```
 ```linux
-conda activate medaka_env
+conda activate python310_env
 ```
+- Tải các gói của `python3.10` vào *Local channel* 
 ```linux
-python -m pip install --upgrade pip
-```
-- Tải các gói của `python3.11.11` vào *Local channel* 
-```linux
-conda create --name temp_env python=3.11.11 --download-only
+conda create --name temp_env python=3.10 --download-only
 ```
 - Tải các gói của `medaka` vào *Local channel*
 ```linux
-conda install medaka --download-only
+conda install medaka=1.11.3 --download-only
 ```
 - Tải các gói của `pyabpoa` vào *Local channel*
 ```linux
@@ -165,6 +162,17 @@ conda index /home/username-1/my_local_channel
 ```linux
 tar -zcf /home/username-1/my_local_channel.tar.gz /home/username-1/my_local_channel
 ```
+## 2. Trên thiết bị không có kết nối Internet
+```linux
+conda create --name medaka python=3.10 -c file:///home/username-2/my_local_channel/ --offline --override-channels
+```
+```linux
+conda activate medaka
+```
+```linux
+conda install medaka -c file:///home/username-2/my_local_channel/ --offline --override-channels
+```
+
 
 
 
