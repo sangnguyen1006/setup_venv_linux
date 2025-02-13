@@ -94,7 +94,7 @@ medaka --version
 ## 1. Trên thiết bị có kết nối Internet
 - Tạo một `venv` mới để cài đặt các gói *Python* (ví dụ `medaka`)
 ```linux
-conda create --name medaka_env python=3.11.11
+conda create --name medaka_env python=3.10
 ```
 ```linux
 conda activate medaka_env
@@ -131,6 +131,13 @@ tar -zcf wheelhouse.tar.gz wheelhouse
 - Giải nén tệp  `wheelhouse.tar.gz` thành thư mục `wheelhouse` bằng lệnh
 ```linux
 tar -zxf /home/username/wheelhouse.tar.gz
+```
+- Kích hoặt môi trường trong `Conda`
+```linux
+source ~/miniconda3/bin/activate
+```
+```linux
+conda activate medaka_env
 ```
 - Đi đến thư mục `/home/username/` thực thi lệnh cài đặt các thư viện *Python*
 ```linux
