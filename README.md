@@ -132,10 +132,6 @@ tar -zcf wheelhouse.tar.gz wheelhouse
 ```linux
 tar -zxf /home/username/wheelhouse.tar.gz
 ```
-- Kích hoặt môi trường `my_offline_env` trong *Conda* đã tạo ở bước **1.2**
-```linux
-conda activate my_offline_env
-```
 - Đi đến thư mục `/home/username/` thực thi lệnh cài đặt các thư viện *Python*
 ```linux
 pip install -r wheelhouse/requirements.txt --no-index --find-links wheelhouse
