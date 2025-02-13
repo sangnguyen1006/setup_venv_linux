@@ -16,7 +16,11 @@ channels:
 pkgs_dirs:
   - /home/username-1/my_local_channel/linux-64
 ```
-- Tải các gói của `python3.10` vào *Local channel* 
+- Kích hoặt `Conda`
+```linux
+source ~/miniconda3/bin/activate
+```
+- Tải các gói của `python 3.10` vào *Local channel* 
 ```linux
 conda create --name temp_env python=3.10 --download-only
 ```
