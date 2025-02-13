@@ -132,7 +132,7 @@ tar -zcf wheelhouse.tar.gz wheelhouse
 ```linux
 tar -zxf /home/username/wheelhouse.tar.gz
 ```
-- Kích hoặt môi trường trong `Conda`
+- Kích hoặt môi trường `medaka_env` trong `Conda` đã tạo ở mục trên
 ```linux
 source ~/miniconda3/bin/activate
 ```
