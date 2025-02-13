@@ -1,4 +1,73 @@
-# LINUX - Install libs && venvs via PIP
+# LINUX - Create a Local Channel && Install Packages via Conda
+## 1. Trên thiết bị có kết nối Internet
+- Tạo thư mục muốn dùng làm *Local channel*, ví dụ đối với `linux-64`
+```linux
+mkdir -p /home/username-1/my_local_channel/linux-64
+```
+- Tùy chỉnh cấu hình trong tệp `.condarc`, Nếu không thấy tệp `~/.condarc` hoặc `/etc/conda/.condarc` hãy
+tự tạo tệp `vi /home/username-1/.condarc`. Trong tệp `.condarc`, thứ tự các kênh rất quan trọng. Trong ví dụ bên dưới,
+*Conda* sẽ tìm kiếm các gói trong kênh `conda-forge` trước, sau đó là `bioconda`, và cuối cùng là `defaults`.
+- Đặt lại `pkgs_dirs` mỗi lần sử dụng *Conda* sẽ ưu tiên lưu các gói vào thư mục `/home/username-1/my_local_channel`.
+```linux
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+pkgs_dirs:
+  - /home/username-1/my_local_channel/linux-64
+```
+- Tải các gói của `python3.10` vào *Local channel* 
+```linux
+conda create --name temp_env python=3.10 --download-only
+```
+- Tải các gói của `medaka` vào *Local channel*
+```linux
+conda install medaka=1.11.3 --download-only
+```
+- Tải các gói của `pyabpoa` vào *Local channel*
+```linux
+conda install pyabpoa --download-only
+```
+- Tạo *index* cho *local channel*, Lệnh bên dưới sẽ tạo tệp `/home/username-1/my_local_channel/linux-64/repodata.json`,
+và tệp `/home/username-1/my_local_channel/noarch/repodata.json` giúp *Conda* nhận diện đó là một *channel* hợp lệ.
+```linux
+conda index /home/username-1/my_local_channel
+```
+- Nén thư mục `my_local_channel` thành tệp `my_local_channel.tar.gz` bằng lệnh
+```linux
+tar -zcf /home/username-1/my_local_channel.tar.gz /home/username-1/my_local_channel
+```
+## 2. Trên thiết bị không có kết nối Internet
+- Sao chép thư mục `my_local_channel.tar.gz` đã tạo ở bước trên vào máy đích ví dụ `/home/username-2/my_local_channel.tar.gz`
+- Giải nén tệp  `my_local_channel.tar.gz` thành thư mục `my_local_channel` bằng lệnh
+```linux
+tar -zxf /home/username-2/my_local_channel.tar.gz
+```
+- Đặt `my_local_channel` thành `Channel` ưu tiên bằng cách chỉnh sửa tệp cấu hình người dùng `.condarc`
+```linux
+channels:
+  - file:///home/username-2/my_local_channel
+  - conda-forge
+  - bioconda
+  - defaults
+```
+- Tạo môi trường mới với `python 3.10` sử dụng `Local channel`
+```linux
+conda create --name medaka_env python=3.10 -c file:///home/username-2/my_local_channel/ --offline --override-channels
+```
+```linux
+conda activate medaka_env
+```
+- Cài đặt thư viện `medaka`
+```linux
+conda install medaka -c file:///home/username-2/my_local_channel/ --offline --override-channels
+```
+- Kiểm tra cài đặt
+```linux
+medaka --version
+```
+
+# LINUX - Install Libs && Venvs via PIP
 ## 1. Tạo môi trường Python trong miniconda3
 ### 1.1. Trên thiết bị có kết nối Internet
 - Tạo thư mục muốn dùng làm *Local channel*
@@ -114,63 +183,6 @@ pip install -r wheelhouse/requirements.txt --no-index --find-links wheelhouse
 - Kiểm tra cài đặt
 ```linux
 medaka --version
-```
-
-# LINUX - Create a Local channel && Install packages via Conda
-## 1. Trên thiết bị có kết nối Internet
-- Tạo thư mục muốn dùng làm *Local channel*
-```linux
-mkdir -p /home/username-1/my_local_channel/linux-64
-```
-- Tùy chỉnh cấu hình trong tệp `.condarc`, Nếu không thấy tệp `~/.condarc` hoặc `/etc/conda/.condarc` hãy
-tự tạo tệp `vi /home/username-1/.condarc`. Trong tệp `.condarc`, thứ tự các kênh rất quan trọng. Trong ví dụ bên dưới,
-*Conda* sẽ tìm kiếm các gói trong kênh `conda-forge` trước, sau đó là `bioconda`, và cuối cùng là `defaults`.
-- Đặt lại `pkgs_dirs` mỗi lần sử dụng *Conda* sẽ ưu tiên lưu các gói vào thư mục `/home/username-1/my_local_channel`.
-```linux
-channels:
-  - conda-forge
-  - bioconda
-  - defaults
-pkgs_dirs:
-  - /home/username-1/my_local_channel/linux-64
-```
-- Tạo một `venv` mới để cài đặt các gói *Python* (ví dụ `medaka`)
-```linux
-conda create --name python310_env python=3.10
-```
-```linux
-conda activate python310_env
-```
-- Tải các gói của `python3.10` vào *Local channel* 
-```linux
-conda create --name temp_env python=3.10 --download-only
-```
-- Tải các gói của `medaka` vào *Local channel*
-```linux
-conda install medaka=1.11.3 --download-only
-```
-- Tải các gói của `pyabpoa` vào *Local channel*
-```linux
-conda install pyabpoa --download-only
-```
-- Tạo *index* cho *local channel*, Lệnh bên dưới sẽ tạo tệp `/home/username-1/my_local_channel/linux-64/repodata.json`,
-và tệp `/home/username-1/my_local_channel/noarch/repodata.json` giúp *Conda* nhận diện đó là một *channel* hợp lệ.
-```linux
-conda index /home/username-1/my_local_channel
-```
-- Nén thư mục `my_local_channel` thành tệp `my_local_channel.tar.gz` bằng lệnh
-```linux
-tar -zcf /home/username-1/my_local_channel.tar.gz /home/username-1/my_local_channel
-```
-## 2. Trên thiết bị không có kết nối Internet
-```linux
-conda create --name medaka python=3.10 -c file:///home/username-2/my_local_channel/ --offline --override-channels
-```
-```linux
-conda activate medaka
-```
-```linux
-conda install medaka -c file:///home/username-2/my_local_channel/ --offline --override-channels
 ```
 
 
