@@ -90,7 +90,7 @@ conda install medaka -c file:///home/username/my_local_channel/ --offline --over
 medaka --version
 ```
 
-# LINUX - Install Libs && Venvs via PIP
+# LINUX - Install Libs via PIP
 ## 1. Trên thiết bị có kết nối Internet
 - Tạo một `venv` mới để cài đặt các gói *Python* (ví dụ `medaka`)
 ```linux
