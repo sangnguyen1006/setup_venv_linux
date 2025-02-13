@@ -5,9 +5,9 @@
 mkdir -p /home/username/my_local_channel/linux-64
 ```
 - Tùy chỉnh cấu hình trong tệp `.condarc`, Nếu không thấy tệp `~/.condarc` hoặc `/etc/conda/.condarc` hãy
-tự tạo tệp `vi /home/username-1/.condarc`. Trong tệp `.condarc`, thứ tự các kênh rất quan trọng. Trong ví dụ bên dưới,
+tự tạo tệp `vi /home/username/.condarc`. Trong tệp `.condarc`, thứ tự các kênh rất quan trọng. Trong ví dụ bên dưới,
 *Conda* sẽ tìm kiếm các gói trong kênh `conda-forge` trước, sau đó là `bioconda`, và cuối cùng là `defaults`.
-- Đặt lại `pkgs_dirs` mỗi lần sử dụng *Conda* sẽ ưu tiên lưu các gói vào thư mục `/home/username-1/my_local_channel`.
+- Đặt lại `pkgs_dirs` mỗi lần sử dụng *Conda* sẽ ưu tiên lưu các gói vào thư mục `/home/username/my_local_channel`.
 ```linux
 channels:
   - conda-forge
