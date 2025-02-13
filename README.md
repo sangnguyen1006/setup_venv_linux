@@ -75,7 +75,7 @@ python --version
 import sys
 print(sys.executable)
 ```
-- Cuối cùng kiểm tra đường dẫn *pip*, kết quả phải là `/home/username/miniconda3/envs/medaka_env/lib/python3.10/site-packages/pip`,
+- Kiểm tra đường dẫn *pip*, kết quả phải là `/home/username/miniconda3/envs/medaka_env/lib/python3.10/site-packages/pip`,
 nếu không phải, cần vô hiệu hóa *user site packages*, để tránh việc *pip* truy cập vào các gói được cài đặt ở cấp *user*,
 có thể tạm thời đặt biến môi trường thành `export PYTHONNOUSERSITE=1`
 ```linux
