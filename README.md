@@ -34,6 +34,7 @@ conda install pyabpoa --download-only
 ```
 - Tạo *index* cho *local channel*, Lệnh bên dưới sẽ tạo tệp `/home/username/my_local_channel/linux-64/repodata.json`,
 và tệp `/home/username/my_local_channel/noarch/repodata.json` giúp *Conda* nhận diện đó là một *channel* hợp lệ.
+- Nếu chưa có lệnh `index`, hãy cài đặt `conda-build` bằng lệnh `conda install conda-build`
 ```linux
 conda index /home/username/my_local_channel
 ```
