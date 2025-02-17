@@ -1,5 +1,5 @@
-# LINUX - Create a Local Channel && Install Packages via Conda
-## 1. Trên thiết bị có kết nối Internet
+# **LINUX - Create a Local Channel && Install Packages via Conda**
+## **1. Trên thiết bị có kết nối Internet**
 - Tạo thư mục muốn dùng làm *Local channel*, ví dụ đối với `linux-64`
 ```linux
 mkdir -p /home/username/my_local_channel/linux-64
@@ -42,7 +42,7 @@ conda index /home/username/my_local_channel
 ```linux
 tar -zcf /home/username/my_local_channel.tar.gz /home/username/my_local_channel
 ```
-## 2. Trên thiết bị không có kết nối Internet
+## **2. Trên thiết bị không có kết nối Internet**
 - Sao chép thư mục `my_local_channel.tar.gz` đã tạo ở bước trên vào máy đích ví dụ `/home/username/my_local_channel.tar.gz`
 - Giải nén tệp  `my_local_channel.tar.gz` thành thư mục `my_local_channel` bằng lệnh
 ```linux
@@ -91,8 +91,8 @@ conda install medaka -c file:///home/username/my_local_channel/ --offline --over
 medaka --version
 ```
 
-# LINUX - Install Libs via PIP
-## 1. Trên thiết bị có kết nối Internet
+# **LINUX - Install Libs via PIP**
+## **1. Trên thiết bị có kết nối Internet**
 - Tạo một `venv` mới để cài đặt các gói *Python* (ví dụ `medaka`)
 ```linux
 conda create --name medaka_env python=3.10
@@ -127,7 +127,7 @@ cp requirements.txt wheelhouse
 ```linux
 tar -zcf wheelhouse.tar.gz wheelhouse
 ```
-## 2. Trên thiết bị không có kết nối Internet
+## **2. Trên thiết bị không có kết nối Internet**
 - Sao chép thư mục `wheelhouse.tar.gz` đã tạo ở bước trên vào máy đích ví dụ `/home/username/wheelhouse.tar.gz`
 - Giải nén tệp  `wheelhouse.tar.gz` thành thư mục `wheelhouse` bằng lệnh
 ```linux
