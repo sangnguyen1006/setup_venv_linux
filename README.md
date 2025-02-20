@@ -40,7 +40,7 @@ conda index /home/username/my_local_channel
 ```
 - Nén thư mục `my_local_channel` thành tệp `my_local_channel.tar.gz` bằng lệnh
 ```linux
-tar -zcf /home/username/my_local_channel.tar.gz /home/username/my_local_channel
+tar -zcf my_local_channel.tar.gz my_local_channel
 ```
 ## **2. Trên thiết bị không có kết nối Internet**
 - Sao chép thư mục `my_local_channel.tar.gz` đã tạo ở bước trên vào máy đích ví dụ `/home/username/my_local_channel.tar.gz`
