@@ -61,7 +61,6 @@ channels:
 source ~/miniconda3/bin/activate
 ```
 - Tạo môi trường mới với `python 3.10` sử dụng `Local channel`
-- Tìm cách đặt file cài sang /data/udername
 ```linux
 conda create --name medaka_env python=3.10 -c file:///home/username/my_local_channel/ --offline --override-channels
 ```
@@ -134,7 +133,7 @@ tar -zcf wheelhouse.tar.gz wheelhouse
 ```linux
 tar -zxf /home/username/wheelhouse.tar.gz
 ```
-- Kích hoặt môi trường `medaka_env` trong `Conda` đã tạo ở mục trên
+- Kích hoạt môi trường `medaka_env` trong `Conda` đã tạo ở mục trên
 ```linux
 source ~/miniconda3/bin/activate
 ```
