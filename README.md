@@ -1,3 +1,54 @@
+# **LINUX - Use conda-pack to clone the entire environment**
+## **1. Trên thiết bị có kết nối Internet**
+- Tạo môi trường biotools trong conda
+```linux
+conda create --name biotools python pip
+conda activate biotools
+```
+- Cài đặt các gói cần thiết qua conda, nếu các thư viện nào bị lỗi có thể cài đặt chúng bằng pip
+```linux
+conda install fastqc bwa gatk bcftools snpeff samtools bedtools deeptools picard tabix
+```
+```linux
+pip install fastqc bwa gatk bcftools snpeff samtools bedtools deeptools picard tabix
+```
+- Cài đặt conda-pack để đóng gói môi trường
+```linux
+conda install -c conda-forge conda-pack
+```
+- Đóng gói môi trường, lệnh conda pack sẽ tạo ra một file nén biotools.tar.gz chứa toàn bộ môi trường conda 
+```linux
+conda pack -n biotools -o biotools.tar.gz
+```
+- Sao chép file biotools.tar.gz đến máy đích
+## **2. Trên thiết bị không có kết nối Internet**
+- Giải nén môi trường trong máy đích
+```linux
+mkdir -p ~/.conda/envs/biotools
+tar -xzf biotools.tar.gz -C ~/.conda/envs/biotools
+```
+- Kích hoạt môi trường trên máy đích
+```linux
+source /usr/miniconda3/bin/activate
+conda activate biotools
+```
+## **3. Cài đặt biến môi trường cho JAVA và chạy GATK**
+- Đặt biến JAVA PATH và GATK PATH
+ ```linux
+echo 'export JAVA_HOME=/usr/' >> ~/.bashrc
+echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
+echo 'export GATK=/usr/GATK/gatk-4.5.0.0/gatk-package-4.5.0.0-local.jar' >> ~/.bashrc
+source ~/.bashrc
+```
+- Kiểm tra mô trường JAVA, nên là `/usr/bin/java`
+```linux
+which java
+java --version
+```
+- Chạy GATK
+```linux
+java -jar $GATK
+```
 # **LINUX - Create a Local Channel && Install Packages via Conda**
 ## **1. Trên thiết bị có kết nối Internet**
 - Tạo thư mục muốn dùng làm *Local channel*, ví dụ đối với `linux-64`
