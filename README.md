@@ -40,7 +40,7 @@ echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
 echo 'export GATK=/usr/GATK/gatk-4.5.0.0/gatk-package-4.5.0.0-local.jar' >> ~/.bashrc
 source ~/.bashrc
 ```
-- Kiểm tra mô trường JAVA, nên là `/usr/bin/java`
+- Kiểm tra môi trường JAVA, nên là `/usr/bin/java`
 ```linux
 which java
 java --version
