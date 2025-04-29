@@ -31,6 +31,11 @@ tar -xzf biotools.tar.gz -C ~/.conda/envs/biotools
 ```linux
 source ~/.conda/envs/biotools/bin/activate
 ```
+- Sửa các hardcoded paths trong môi trường Conda sau khi giải nén môi trường từ conda-pack
+```linux
+cd $(dirname $(which R))/..
+./bin/conda-unpack
+```
 ## **3. Cài đặt biến môi trường cho JAVA và chạy GATK**
 - Đặt biến JAVA PATH và GATK PATH
  ```linux
