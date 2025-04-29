@@ -29,8 +29,7 @@ tar -xzf biotools.tar.gz -C ~/.conda/envs/biotools
 ```
 - Kích hoạt môi trường trên máy đích
 ```linux
-source /usr/miniconda3/bin/activate
-conda activate biotools
+source ~/.conda/envs/biotools/bin/activate
 ```
 ## **3. Cài đặt biến môi trường cho JAVA và chạy GATK**
 - Đặt biến JAVA PATH và GATK PATH
