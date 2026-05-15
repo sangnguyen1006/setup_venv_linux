@@ -1,4 +1,4 @@
-# **Offline Install packages via PIP**
+# **Offline Installing packages via PIP**
 ## **1. Trên thiết bị có kết nối Internet**
 - Tải thư viện và các gói phụ thuộc về máy
 ```linux
