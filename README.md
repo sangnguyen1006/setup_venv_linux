@@ -6,6 +6,7 @@ mkdir offline_packages
 pip download ultralytics -d offline_packages
 ```
 ## **2. Trên thiết bị không có kết nối Internet**
+- Chuyển thư mục offline_packages vào máy offline
 - Cài đặt thư viện và các gói phụ thuôc
 ```linux
 pip install --no-index --find-links=offline_packages ultralytics
