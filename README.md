@@ -1,3 +1,16 @@
+# **Offline Install packages via PIP**
+## **1. Trên thiết bị có kết nối Internet**
+- Tải thư viện và các gói phụ thuộc về máy
+```linux
+mkdir offline_packages
+pip download ultralytics -d offline_packages
+```
+## **2. Trên thiết bị không có kết nối Internet**
+- Cài đặt thư viện và các gói phụ thuôc
+```linux
+pip install --no-index --find-links=offline_packages ultralytics
+```
+
 # **LINUX - Use conda-pack to clone the entire environment**
 ## **1. Trên thiết bị có kết nối Internet**
 - Tạo môi trường biotools trong conda
