@@ -33,6 +33,7 @@ conda install -c conda-forge conda-pack
 - Đóng gói môi trường, lệnh conda pack sẽ tạo ra một file nén biotools.tar.gz chứa toàn bộ môi trường conda 
 ```linux
 conda pack -n biotools -o biotools.tar.gz
+conda-pack -n bicseq2-env -o ~/bicseq2-env.tar.gz
 ```
 - Sao chép file biotools.tar.gz đến máy đích
 ## **2. Trên thiết bị không có kết nối Internet**
