@@ -51,6 +51,15 @@ source ~/.conda/envs/biotools/bin/activate
 cd $(dirname $(which R))/..
 ./bin/conda-unpack
 ```
+- Hoặc
+```linux
+conda-unpack
+```
+- Hoặc
+```linux
+cd ~/envs/bicseq2-env           # thư mục đã giải nén tar
+python3 bin/conda-unpack        # dùng python3 hệ thống, chỉ cần thư viện chuẩn
+```
 ## **3. Cài đặt biến môi trường cho JAVA và chạy GATK**
 - Đặt biến JAVA PATH và GATK PATH
  ```linux
